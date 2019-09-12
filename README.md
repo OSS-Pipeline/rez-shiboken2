@@ -1,3 +1,4 @@
-# rez-shiboken
+rez-shiboken2
+===
 
-Rez build configuration for Shiboken.
+Rez build configuration for Shiboken2.
