@@ -1,6 +1,6 @@
 name = "shiboken2"
 
-version = "5.12.5.py2"
+version = "5.12.5.py3"
 
 authors = [
     "The Qt Company"
@@ -27,7 +27,7 @@ with scope("config") as config:
     config.build_thread_count = "logical_cores"
 
 #TODO: Use the SHA1 of the archive instead.
-uuid = "shiboken2-5.12.5.py2"
+uuid = "shiboken2-5.12.5.py3"
 
 def commands():
     env.PYTHONPATH.prepend("{root}")

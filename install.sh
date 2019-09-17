@@ -15,7 +15,7 @@ echo -e "==============="
 echo -e "\n"
 
 echo -e "[INSTALL][ARGS] INSTALL PATH: ${INSTALL_PATH}"
-echo -e "[INSTALL][ARGS] PYSIDE2 URL: ${SHIBOKEN2_URL}"
+echo -e "[INSTALL][ARGS] SHIBOKEN2 URL: ${SHIBOKEN2_URL}"
 echo -e "[INSTALL][ARGS] SHIBOKEN2 VERSION: ${SHIBOKEN2_VERSION}"
 
 cd ${INSTALL_PATH}
@@ -26,7 +26,7 @@ echo -e "[INSTALL] Installing Shiboken2-${SHIBOKEN2_VERSION}..."
 echo -e "\n"
 
 # We call the pip command to install the Wheel file into our package.
-pip2 install ${SHIBOKEN2_URL} --target ${INSTALL_PATH} --upgrade --no-dependencies
+pip3 install ${SHIBOKEN2_URL} --target ${INSTALL_PATH} --upgrade --no-dependencies
 
 echo -e "\n"
 echo -e "[INSTALL] Finished installing Shiboken2-${SHIBOKEN2_VERSION}!"
