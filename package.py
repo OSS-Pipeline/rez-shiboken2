@@ -13,8 +13,8 @@ description = \
     """
 
 requires = [
-    "cmake-3+",
-    "python-2.7+"
+    "cmake-3",
+    "python-2.7"
 ]
 
 variants = [

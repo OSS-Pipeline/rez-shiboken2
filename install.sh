@@ -15,7 +15,7 @@ echo -e "==============="
 echo -e "\n"
 
 echo -e "[INSTALL][ARGS] INSTALL PATH: ${INSTALL_PATH}"
-echo -e "[INSTALL][ARGS] PYSIDE2 URL: ${SHIBOKEN2_URL}"
+echo -e "[INSTALL][ARGS] SHIBOKEN2 URL: ${SHIBOKEN2_URL}"
 echo -e "[INSTALL][ARGS] SHIBOKEN2 VERSION: ${SHIBOKEN2_VERSION}"
 
 cd ${INSTALL_PATH}
