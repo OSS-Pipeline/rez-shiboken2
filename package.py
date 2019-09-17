@@ -1,6 +1,6 @@
 name = "shiboken2"
 
-version = "5.12.5"
+version = "5.12.5.py2"
 
 authors = [
     "The Qt Company"
@@ -14,18 +14,20 @@ description = \
 
 requires = [
     "cmake-3+",
-    "python-2+"
+    "python-2.7+"
 ]
 
 variants = [
     ["platform-linux"]
 ]
 
+build_system = "cmake"
+
 with scope("config") as config:
     config.build_thread_count = "logical_cores"
 
 #TODO: Use the SHA1 of the archive instead.
-uuid = "shiboken2-5.12.5"
+uuid = "shiboken2-5.12.5.py2"
 
 def commands():
     env.PYTHONPATH.prepend("{root}")
