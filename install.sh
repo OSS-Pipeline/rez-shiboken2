@@ -3,11 +3,11 @@
 # Will exit the Bash script the moment any command will itself exit with a non-zero status, thus an error.
 set -e
 
-INSTALL_PATH=$1
-SHIBOKEN2_URL=$2
+INSTALL_PATH=${REZ_BUILD_INSTALL_PATH}
+SHIBOKEN2_URL=$1
 SHIBOKEN2_VERSION=${REZ_BUILD_PROJECT_VERSION}
 
-# We print the arguments passed to the Bash script
+# We print the arguments passed to the Bash script.
 echo -e "\n"
 echo -e "==============="
 echo -e "=== INSTALL ==="
@@ -18,9 +18,7 @@ echo -e "[INSTALL][ARGS] INSTALL PATH: ${INSTALL_PATH}"
 echo -e "[INSTALL][ARGS] SHIBOKEN2 URL: ${SHIBOKEN2_URL}"
 echo -e "[INSTALL][ARGS] SHIBOKEN2 VERSION: ${SHIBOKEN2_VERSION}"
 
-cd ${INSTALL_PATH}
-
-# We install Shiboken2
+# We install Shiboken2.
 echo -e "\n"
 echo -e "[INSTALL] Installing Shiboken2-${SHIBOKEN2_VERSION}..."
 echo -e "\n"
