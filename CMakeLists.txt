@@ -5,13 +5,13 @@ include(RezRepository)
 
 # We split the PySide2 version string in multiple ones.
 string(REPLACE "." ";" SHIBOKEN2_VERSION_LIST ${REZ_BUILD_PROJECT_VERSION})
-list(GET SHIBOKEN2_VERSION_LIST 0 SHIBOKEN2_VERSION_MAJOR)
-list(GET SHIBOKEN2_VERSION_LIST 1 SHIBOKEN2_VERSION_MINOR)
-list(GET SHIBOKEN2_VERSION_LIST 2 SHIBOKEN2_VERSION_PATCH)
-list(GET SHIBOKEN2_VERSION_LIST 2 SHIBOKEN2_VERSION_PYTHON)
+list(GET SHIBOKEN2_VERSION_LIST 0 SHIBOKEN2_MAJOR_VERSION)
+list(GET SHIBOKEN2_VERSION_LIST 1 SHIBOKEN2_MINOR_VERSION)
+list(GET SHIBOKEN2_VERSION_LIST 2 SHIBOKEN2_PATCH_VERSION)
+list(GET SHIBOKEN2_VERSION_LIST 3 SHIBOKEN2_PYTHON_VERSION)
 
 # We create Pythonless version of PySide2 to make it match with the one in the archive name.
-set(SHIBOKEN2_VERSION_PYTHONLESS "${SHIBOKEN2_VERSION_MAJOR}.${SHIBOKEN2_VERSION_MINOR}.${SHIBOKEN2_VERSION_PATCH}")
+set(SHIBOKEN2_PYTHONLESS_VERSION "${SHIBOKEN2_MAJOR_VERSION}.${SHIBOKEN2_MINOR_VERSION}.${SHIBOKEN2_PATCH_VERSION}")
 
 # Shiboken2
 rez_set_archive(
@@ -19,15 +19,15 @@ rez_set_archive(
     # that is pointing to the root directory where we can find all the archives of the package
     # we can build, using the following hierarchy:
     # "${REZ_REPO_PAYLOAD_DIR}/project_name/archive.what.ever"
-    SHIBOKEN2_URL shiboken2/shiboken2-${SHIBOKEN2_VERSION_PYTHONLESS}-${SHIBOKEN2_VERSION_PYTHONLESS}-cp27-cp27mu-manylinux1_x86_64.whl
-    https://download.qt.io/official_releases/QtForPython/pyside2/shiboken2-5.12.5-5.12.5-cp27-cp27mu-manylinux1_x86_64.whl
+    SHIBOKEN2_URL shiboken2/shiboken2-${SHIBOKEN2_PYTHONLESS_VERSION}-${SHIBOKEN2_PYTHONLESS_VERSION}-cp35.cp36.cp37-abi3-manylinux1_x86_64.whl
+    https://download.qt.io/official_releases/QtForPython/pyside2/shiboken2-5.12.5-5.12.5-cp35.cp36.cp37-abi3-manylinux1_x86_64.whl
 )
 
 # In the case of a Python pip wheel file, we do not have any archive to extract, so we can just execute our Bash
 # script(s) inside an "execute_process" macro.
 execute_process(
     COMMAND
-    bash ${CMAKE_SOURCE_DIR}/install.sh ${CMAKE_INSTALL_PREFIX} ${SHIBOKEN2_URL}
+    bash ${CMAKE_SOURCE_DIR}/install.sh ${SHIBOKEN2_URL}
 )
 
 # We use a bogus CMake "install" step in order to be able to properly finish
