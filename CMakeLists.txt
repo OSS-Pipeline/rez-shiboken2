@@ -11,7 +11,7 @@ list(GET SHIBOKEN2_VERSION_LIST 2 SHIBOKEN2_PATCH_VERSION)
 list(GET SHIBOKEN2_VERSION_LIST 3 SHIBOKEN2_PYTHON_VERSION)
 
 # We create Pythonless version of PySide2 to make it match with the one in the archive name.
-set(SHIBOKEN2_VERSION_PYTHONLESS "${SHIBOKEN2_MAJOR_VERSION}.${SHIBOKEN2_MINOR_VERSION}.${SHIBOKEN2_PATCH_VERSION}")
+set(SHIBOKEN2_PYTHONLESS_VERSION "${SHIBOKEN2_MAJOR_VERSION}.${SHIBOKEN2_MINOR_VERSION}.${SHIBOKEN2_PATCH_VERSION}")
 
 # Shiboken2
 rez_set_archive(
@@ -19,7 +19,7 @@ rez_set_archive(
     # that is pointing to the root directory where we can find all the archives of the package
     # we can build, using the following hierarchy:
     # "${REZ_REPO_PAYLOAD_DIR}/project_name/archive.what.ever"
-    SHIBOKEN2_URL shiboken2/shiboken2-${SHIBOKEN2_VERSION_PYTHONLESS}-${SHIBOKEN2_VERSION_PYTHONLESS}-cp35.cp36.cp37-abi3-manylinux1_x86_64.whl
+    SHIBOKEN2_URL shiboken2/shiboken2-${SHIBOKEN2_PYTHONLESS_VERSION}-${SHIBOKEN2_PYTHONLESS_VERSION}-cp35.cp36.cp37-abi3-manylinux1_x86_64.whl
     https://download.qt.io/official_releases/QtForPython/pyside2/shiboken2-5.12.5-5.12.5-cp35.cp36.cp37-abi3-manylinux1_x86_64.whl
 )
 
