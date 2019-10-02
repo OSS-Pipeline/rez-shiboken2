@@ -14,7 +14,7 @@ description = \
 
 requires = [
     "cmake-3+",
-    "python-3.5+<3.7"
+    "python-3.5+<3.8"
 ]
 
 variants = [
