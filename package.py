@@ -13,8 +13,8 @@ description = \
     """
 
 requires = [
-    "cmake-3",
-    "python-3.7"
+    "cmake-3+",
+    "python-3.5+<3.7"
 ]
 
 variants = [
@@ -26,8 +26,10 @@ build_system = "cmake"
 with scope("config") as config:
     config.build_thread_count = "logical_cores"
 
-#TODO: Use the SHA1 of the archive instead.
-uuid = "shiboken2-5.12.5.py3"
+uuid = "shiboken2-{version}".format(version=str(version))
 
 def commands():
     env.PYTHONPATH.prepend("{root}")
+
+    # Helper environment variables.
+    env.SHIBOKEN_LIBRARY_PATH.set("{root}/shiboken2")
